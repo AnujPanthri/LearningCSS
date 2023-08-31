@@ -1,0 +1,19 @@
+html{
+    font-family:monospace;
+    background-color: #9872fa;
+}
+
+h1{
+    margin-bottom: 20px;
+    color: #000000;
+    font-size:50px;
+}
+h2{
+    margin-top:40px;
+}
+
+p span{
+    font-weight: bold;
+    font-size:20px;
+
+}
