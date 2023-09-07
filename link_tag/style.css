@@ -1,0 +1,24 @@
+body{
+    background-color: black;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+p{
+    font-size:3rem;
+}
+a{
+    color:hsl(240, 100%, 50%);
+    text-decoration: none;
+}
+
+a:hover, a:focus{
+    color:hsl(268, 100%, 50%);
+}
+
+a:visited{
+    color:red;
+}
+
+a:active{
+    color:green;
+}
