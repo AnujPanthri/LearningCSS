@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto',sans-serif;
+    font-size: 2rem;
+    /* position: relative; */
+    height: 200vh;
+}
+
+.container{
+    border: 2px dashed #000;    
+    width:500px;
+    height:500px;
+    margin:5em auto;
+    position: relative;
+    
+}
+
+.box{
+    width:200px;
+    height:100px;
+}
+
+.relative{
+    background-color: rgb(249, 136, 136);
+    /* color:#fff; */
+    position: relative;
+    top:10%;
+    left:100%;
+}
+
+.absolute{
+    background-color: rgb(152, 152, 234);
+    position: absolute;
+    bottom:0;
+    right:0;
+}
+
+.fixed{
+    background-color: rgb(133, 243, 133);
+    position: fixed;
+    top:0;
+}
+
+.sticky{
+    background-color: plum;
+    position: sticky;
+    top:0;
+}
