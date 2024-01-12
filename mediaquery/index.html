@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VML Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <a href="#" class="home_link">
+            <img class="logo" src="images/snowflake-white.svg" alt="logo">
+            <span class="name">VML</span>
+        </a>
+        <div class="links">
+            <a href="#">ABOUT US</a>
+            <a href="#">WORK</a>
+            <a href="#">WHAT WE DO</a>
+            <a href="#">INSIGHTS</a>
+            <a href="#">NEWS</a>
+            <a href="#">CAREERS</a>
+            <a href="#">CONTACT US</a>
+        </div>
+        <button class="menu_btn" onclick="toggle_mobile_menu()">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </header>
+
+    <section class="mobile_menu">
+        <div class="header">
+            <a href="#" class="home_link">
+                <img class="logo" src="images/snowflake-white.svg" alt="logo">
+                <span class="name">VML</span>
+            </a>
+            <button class="close_btn" onclick="toggle_mobile_menu()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="links">
+            <a href="#">about us</a>
+            <a href="#">work</a>
+            <a href="#">what we do</a>
+            <a href="#">insights</a>
+            <a href="#">news</a>
+            <a href="#">careers</a>
+            <a href="#">contact us</a>
+        </div>
+    </section>
+
+    <main>
+        <section class="hero">
+            <div class="hero_container">
+                <p>Welcome to VML!</p>
+                <a href="#" class="readmore_link">READ MORE</a>
+            </div>
+        </section>
+        <section class="banner">
+            <span class="text">
+                We create connected brands to drive growth
+            </span>
+        </section>
+
+        <section class="work">
+            <div class="cards">
+                <div class="card reverse">
+                    <img class="image" src="images/work1.jpg" alt="image">
+                    <!-- <div class="image_container">
+                    </div> -->
+                    <div class="detail">
+                        <div class="content">
+                            <div class="author_container">
+                                <span class="author">SHERWIN-WILLIAMS</span>
+                                <i class="fa-solid fa-trophy award"></i>
+                            </div>
+                            <a href="" class="title">Speaking In Color</a>
+                            <span class="sub-title">In a world filled with colorIn a world filled with colorIn a world filled with colorIn a world filled with colorIn a world filled with colorIn a world filled with colorIn a world filled with colorIn a world filled with colorIn a world filled with color, how do you find THE ONE?</span>
+                            <a href="" class="read_case_study_link">Read Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="image" src="images/work2.jpg" alt="image">
+                    <div class="detail blue">
+                        <div class="content">
+                            <div class="author_container">
+                                <span class="author">SHERWIN-WILLIAMS</span>
+                                <i class="fa-solid fa-trophy award"></i>
+                            </div>
+                            <a href="" class="title">Speaking In Color</a>
+                            <span class="sub-title">In a world filled with color, how do you find THE ONE?</span>
+                            <a href="" class="read_case_study_link">Read Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card reverse">
+                    <img class="image" src="images/work3.jpg" alt="image">
+                    <div class="detail blue">
+                        <div class="content">
+                            <div class="author_container">
+                                <span class="author">SHERWIN-WILLIAMS</span>
+                                <i class="fa-solid fa-trophy award"></i>
+                            </div>
+                            <a href="" class="title">Speaking In Color</a>
+                            <span class="sub-title">In a world filled with color, how do you find THE ONE?</span>
+                            <a href="" class="read_case_study_link">Read Case Study</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-top">
+            <div class="footer_links">
+                <div class="main_links">
+                    <a class="no-wrap" href="#">CONTACT US</a>
+                    <a class="no-wrap" href="#">NEWSLETTER</a>
+                    <a class="no-wrap" href="#">PRESS CENTER</a>
+
+                </div>
+                <div class="extra_links">
+                    <a href="#">Cookie Settings</a>
+                    <a href="#">Cookie Policy</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Modern Slavery Act Statement</a>
+                    <a href="#">CCPA Policy</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+            <div class="footer_socials">
+                <h4 class="title">Connect with us</h4>
+                <div class="social_links">
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <i class="fa-brands fa-square-youtube"></i>
+                </div>
+                <img class="logo" src="images/snowflake-gray.svg" alt="logo">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span class="footer_copyright">&copy; 2024 VML. A <a href="#">WPP Company</a></span>
+        </div>
+
+
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
