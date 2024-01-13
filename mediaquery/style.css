@@ -149,6 +149,11 @@ header .menu_btn {
     z-index: 1;
     overflow-y: scroll;
     transition: left 0.5s ease-out;
+
+    background-image: url('images/snowflake-gray.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .mobile_menu.active {
