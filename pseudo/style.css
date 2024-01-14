@@ -1,0 +1,62 @@
+.container {
+    border: 2px solid;
+    margin: 70px auto;
+    width: 200px;
+    /* position: relative; */
+}
+
+
+.container::before {
+    content: "before";
+    display: block;
+    background-color: rgb(9, 255, 0);
+}
+
+.container::after {
+    content: "after";
+    display: block;
+    background-color: rgb(34, 0, 255);
+    color: #fff;
+}
+
+
+.box_container {
+    display: flex;
+}
+
+.box {
+    border-radius: 10px;
+    border: 2px solid;
+    height: 100px;
+    aspect-ratio: 1;
+    display: inline-block;
+    margin: 10px;
+    display: grid;
+    place-content: center;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.box[data-red] {
+    background-color: rgb(246, 59, 59);
+}
+
+.box[data-red]::after {
+    content: "red";
+    display: inline-block;
+}
+
+.box:not([data-red]) {
+    background-color: rgb(132, 79, 216);
+}
+
+.box:not([data-red])::after {
+    content: "other";
+    display: inline-block;
+}
+
+#modal::backdrop {
+    backdrop-filter: blur(2px);
+    /* background-color: rgba(250, 128, 114, 0.414); */
+}

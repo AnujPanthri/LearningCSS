@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&display=swap');
+
+/*|| CSS RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+/*|| MAIN */
+
+:root{
+    --primary-color:rgb(55, 55, 55);
+    --secondary-color:rgb(110, 110, 110);
+    --third-color:rgba(33, 33, 33, 0.263);
+    
+    --C-color: hsl(355, 76%, 54%);
+    --D-color: hsl(24, 98%, 51%);
+    --E-color: hsl(59, 100%, 50%);
+    
+    --F-color: hsl(147, 62%, 46%);
+    --G-color: hsl(176, 52%, 46%);
+    --A-color: hsl(208, 79%, 58%);
+    --B-color: hsl(305, 62%, 46%);
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins",sans-serif;
+    background-color: #000;
+}
+
+#piano{
+    background-color:var(--primary-color); 
+    border-radius: 10px;
+
+    position: relative;
+}
+
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:1rem 2rem;
+    font-size:1rem;
+}
+
+.left_container{
+    display: flex;
+    column-gap: 1rem;
+}
+
+.left_container .record_btn{
+    position: relative;
+    background-color:var(--secondary-color);
+}
+
+.left_container .record_btn::after{
+    display: block;
+    content:"";
+
+    height:0.7rem;
+    aspect-ratio: 1;
+    
+    border-radius: 50%;
+    background-color:rgb(0, 255, 4);
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+
+.btn_container{
+    display:flex;
+    column-gap:0.5em;
+    background-color:var(--secondary-color);
+    border-radius: 50px;
+
+}
+
+.left_container button{
+    color:#e1e1e1;
+    background-color:transparent;
+    height:2.5em;
+    aspect-ratio: 1;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.title{
+    color:var(--secondary-color);
+    display: block;
+    font-size: 5em;
+    /* margin: 1rem; */
+}
+
+.keys{
+    display: flex;
+    background-color:var(--third-color);
+    font-size:2rem;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+}
+.key{
+    /* background-color:var(--third-color); */
+
+    width:2em;
+    height:10em;
+    border:0.14em solid;
+    position: relative;
+    overflow: visible;
+    
+    border-top:none;
+    border-bottom:none;
+
+    /* border-radius: 0px 0px 10px 10px; */
+}
+.key:first-child{
+    border-radius: 0px 0px 0px 10px;
+    border-left: none;
+}
+.key:last-child{
+    border-radius: 0px 0px 10px 0px;
+    border-right: none;
+}
+
+.key .sharp{
+    background: var(--secondary-color);
+    border: 0.2em solid #000;
+    border-top:none;
+    display:block;
+    content:"";
+    height:60%;
+    width:1.5em;
+    z-index: 1;
+    
+    position:absolute;
+    right:-0.85em;
+
+    border-radius: 0px 0px 10px 10px;
+
+}
+
+.C.active, .C>.sharp.active{
+    background-color: var(--C-color);
+    box-shadow: 0 0 20px -5px var(--C-color);
+}
+
+.D.active, .D>.sharp.active{
+    background-color: var(--D-color);
+    box-shadow: 0 0 20px -5px var(--D-color);
+}
+
+.E.active, .E>.sharp.active{
+    background-color: var(--E-color);
+    box-shadow: 0 0 20px -5px var(--E-color);
+}
+
+.F.active, .F>.sharp.active{
+    background-color: var(--F-color);
+    box-shadow: 0 0 20px -5px var(--F-color);
+}
+
+.G.active, .G>.sharp.active{
+    background-color: var(--G-color);
+    box-shadow: 0 0 20px -5px var(--G-color);
+}
+
+.A.active, .A>.sharp.active{
+    background-color: var(--A-color);
+    box-shadow: 0 0 20px -5px var(--A-color);
+}
+.B.active, .B>.sharp.active{
+    background-color: var(--B-color);
+    box-shadow: 0 0 20px -5px var(--B-color);
+}
+
