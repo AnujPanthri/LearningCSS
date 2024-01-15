@@ -1,25 +1,50 @@
 function createSynth(){
-    var synth = new Tone.Synth().toDestination();
+    var synth = new Tone.PolySynth(Tone.Synth).toDestination();
     return synth;
 }
 
-function playNote(elem,synth){
+function createPianoSynth(){
+    var synth = new Tone.Sampler({
+        urls: {
+            "C4":"C4.mp3",
+            "D#4":"Ds4.mp3",
+            "F#4":"Fs4.mp3",
+            "A4":"A4.mp3",
+        },
+        release: 1,
+        baseUrl: "https://tonejs.github.io/audio/salamander/",
+    }).toDestination();
+    return synth;
+}
+function createSynth2(){
+    var synth = new Tone.Sampler({
+        urls: {
+            A1: "A1.mp3",
+            A2: "A2.mp3",
+        },
+        // release: 0.1,
+        baseUrl: "https://tonejs.github.io/audio/casio/",
+    }).toDestination();
+
+    return synth;
+}
+
+function playNote(elem){
     Tone.loaded().then(()=>{
         synth.triggerAttack(elem.dataset.note)
     })
 }
 
-function stopNote(elem,synth){
+function stopNote(elem){
     Tone.loaded().then(()=>{
-        synth.triggerRelease();
+        synth.triggerRelease(elem.dataset.note);
     })
 }
 
 const all_keys = document.querySelectorAll(".key , .key>.sharp");
-const synths = [];
-for( i=0;i<all_keys.length;i++){
-    synths.push(createSynth());
-}
+// const synth = createSynth();
+const synth = createPianoSynth();
+// const synth = createSynth2();
 
 
 all_keys.forEach((elem,idx)=>{
@@ -27,23 +52,23 @@ all_keys.forEach((elem,idx)=>{
         ev.stopPropagation();
 
         all_keys[idx].classList.add("active");
-        playNote(elem,synths[idx]);
+        playNote(elem);
     })
     elem.addEventListener('touchend',ev=>{
         ev.stopPropagation();
         all_keys[idx].classList.remove("active");
-        stopNote(elem,synths[idx]);
+        stopNote(elem);
     })
 
     elem.addEventListener('mousedown',ev=>{
         ev.stopPropagation();
         all_keys[idx].classList.add("active");
-        playNote(elem,synths[idx]);
+        playNote(elem);
     })
     elem.addEventListener('mouseup',ev=>{
         ev.stopPropagation();
         all_keys[idx].classList.remove("active");
-        stopNote(elem,synths[idx]);
+        stopNote(elem);
     })
 });
 
@@ -60,7 +85,7 @@ document.addEventListener("keydown",ev=>{
 
     console.log(char);
     all_keys[idx].classList.add("active");
-    playNote(all_keys[idx],synths[idx]);
+    playNote(all_keys[idx]);
 
 })
 
@@ -73,6 +98,6 @@ document.addEventListener("keyup",ev=>{
 
     console.log(char);
     all_keys[idx].classList.remove("active");
-    stopNote(all_keys[idx],synths[idx]);
+    stopNote(all_keys[idx]);
     
 })
