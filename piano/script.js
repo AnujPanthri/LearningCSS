@@ -137,3 +137,12 @@ document.addEventListener("keyup",ev=>{
 
     // console.log(ev.key);
 })
+
+
+// window.addEventListener("focus",event=>{
+//     alert("Hi back");
+// })
+
+// window.addEventListener("blur",event=>{
+//     alert("come back");
+// })
