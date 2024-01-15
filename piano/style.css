@@ -85,6 +85,7 @@ body{
 .left_container button{
     color:#e1e1e1;
     background-color:transparent;
+    cursor: pointer;
     height:2.5em;
     aspect-ratio: 1;
     border: none;

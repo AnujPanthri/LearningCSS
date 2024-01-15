@@ -41,10 +41,19 @@ function stopNote(elem){
     })
 }
 
+function transpose(all_keys,val){
+    if((parseInt(all_keys[0].dataset.note.slice(-1))+val)<1)    return;
+    all_keys.forEach(key=>{
+        var note_num = parseInt(key.dataset.note.slice(-1));
+        note_num+=val;
+        key.dataset.note = key.dataset.note.slice(0,-1) + note_num;
+    });
+}
+
 const all_keys = document.querySelectorAll(".key , .key>.sharp");
-// const synth = createSynth();
-const synth = createPianoSynth();
-// const synth = createSynth2();
+// var synth = createSynth();
+var synth = createPianoSynth();
+// var synth = createSynth2();
 
 
 all_keys.forEach((elem,idx)=>{
@@ -81,8 +90,8 @@ document.addEventListener("keydown",ev=>{
     
     if(idx==-1) return;
     if(all_keys[idx].classList.contains('active'))  return;
+    
     ev.preventDefault();
-
     console.log(char);
     all_keys[idx].classList.add("active");
     playNote(all_keys[idx]);
@@ -100,4 +109,31 @@ document.addEventListener("keyup",ev=>{
     all_keys[idx].classList.remove("active");
     stopNote(all_keys[idx]);
     
+})
+
+
+
+
+transpose_down_btn.addEventListener('click',ev=>{
+    synth.releaseAll();
+    transpose(all_keys,-1);
+
+})
+transpose_up_btn.addEventListener('click',ev=>{
+    synth.releaseAll();
+    transpose(all_keys,1);
+})
+
+
+document.addEventListener("keyup",ev=>{
+    if(ev.key=="ArrowLeft"){
+        synth.releaseAll();
+        transpose(all_keys,-1);
+    }
+    else if(ev.key=="ArrowRight"){
+        synth.releaseAll();
+        transpose(all_keys,1);
+    }
+
+    // console.log(ev.key);
 })
