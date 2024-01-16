@@ -12,8 +12,10 @@
 :root {
     --primary-color: rgb(55, 55, 55);
     --secondary-color: rgb(110, 110, 110);
-    --third-color: rgba(33, 33, 33, 0.263);
+    --KEYS-BG-color: rgb(48, 48, 48);
+    --KEY-color: rgba(33, 33, 33, 0.201);
 
+    --ACTIVE-COLOR: rgb(0, 81, 255);
     --C-color: hsl(355, 76%, 54%);
     --D-color: hsl(24, 98%, 51%);
     --E-color: hsl(59, 100%, 50%);
@@ -106,14 +108,14 @@ body {
 
 .keys {
     display: flex;
-    background-color: var(--third-color);
+    background-color: var(--KEYS-BG-color);
     font-size: 2rem;
     border-radius: 0 0 10px 10px;
     overflow: hidden;
 }
 
 .key {
-    /* background-color:var(--third-color); */
+    background-color:var(--KEY-color);
 
     width: 2em;
     height: 10em;
@@ -142,7 +144,6 @@ body {
     border: 0.2em solid #000;
     border-top: none;
     display: block;
-    content: "";
     height: 60%;
     width: 1.5em;
     z-index: 1;
@@ -154,48 +155,46 @@ body {
 
 }
 
-.C.active,
-.C>.sharp.active {
-    background-color: var(--C-color);
-    box-shadow: 0 0 20px -5px var(--C-color);
+.C,
+.C>.sharp {
+    --ACTIVE-COLOR: var(--C-color);
 }
 
-.D.active,
-.D>.sharp.active {
-    background-color: var(--D-color);
-    box-shadow: 0 0 20px -5px var(--D-color);
+.D,
+.D>.sharp {
+    --ACTIVE-COLOR: var(--D-color);
 }
 
-.E.active,
-.E>.sharp.active {
-    background-color: var(--E-color);
-    box-shadow: 0 0 20px -5px var(--E-color);
+.E,
+.E>.sharp {
+    --ACTIVE-COLOR: var(--E-color);
 }
 
-.F.active,
-.F>.sharp.active {
-    background-color: var(--F-color);
-    box-shadow: 0 0 20px -5px var(--F-color);
+.F,
+.F>.sharp {
+    --ACTIVE-COLOR: var(--F-color);
 }
 
-.G.active,
-.G>.sharp.active {
-    background-color: var(--G-color);
-    box-shadow: 0 0 20px -5px var(--G-color);
+.G,
+.G>.sharp {
+    --ACTIVE-COLOR: var(--G-color);
 }
 
-.A.active,
-.A>.sharp.active {
-    background-color: var(--A-color);
-    box-shadow: 0 0 20px -5px var(--A-color);
+.A,
+.A>.sharp {
+    --ACTIVE-COLOR: var(--A-color);
 }
 
-.B.active,
-.B>.sharp.active {
-    background-color: var(--B-color);
-    box-shadow: 0 0 20px -5px var(--B-color);
+.B,
+.B>.sharp {
+    --ACTIVE-COLOR: var(--B-color);
 }
 
+.key.active,
+.key>.sharp.active {
+    background-color: var(--ACTIVE-COLOR);
+    box-shadow: 0 0 20px -5px var(--ACTIVE-COLOR);
+}
 
 @media screen and (max-width:1000px) {
     #piano {

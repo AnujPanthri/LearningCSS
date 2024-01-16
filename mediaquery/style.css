@@ -1,5 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&display=swap');
+/* || VARIABLES */
+:root{
+    --BG-COLOR:#272727;
+    --FG-COLOR: #ffffff;
+    --CARD-YELLOW:rgb(253, 234, 122); 
+    --CARD-BLUE:rgb(122, 137, 253); 
+    --LOGO-URL: url("images/snowflake-white.svg");
+    --BG-LOGO-URL: url("images/snowflake-gray.svg");
+    --LOGO-DARK-URL: url("images/snowflake-gray.svg");
+    --LOGO-LIGHT-URL: url("images/snowflake-white.svg");
+}
 
+@media (prefers-color-scheme:light){
+    :root{
+        --BG-COLOR:#e8e8e8;
+        --FG-COLOR: #000000;
+        --CARD-YELLOW:rgb(253, 234, 122); 
+        --CARD-BLUE:rgb(122, 137, 253);
+        --LOGO-URL: url("images/snowflake-gray.svg");
+        --BG-LOGO-URL: url("images/snowflake-white.svg");
+
+    }
+
+}
 /*| CSS RESET */
 * {
     padding: 0;
@@ -13,7 +36,7 @@ body {
 }
 
 a {
-    color: #fff;
+    color: var(--FG-COLOR);
     text-decoration: none;
 }
 
@@ -59,8 +82,8 @@ footer {
 header,
 .mobile_menu,
 footer {
-    background-color: #272727;
-    color: #fff;
+    background-color: var(--BG-COLOR);
+    color: var(--FG-COLOR);
     padding: 0 8vw;
 }
 
@@ -78,7 +101,7 @@ header {
 header .home_link {
     font-weight: 700;
     text-decoration: none;
-    color: #fff;
+    color: var(--FG-COLOR);
 
     display: flex;
     align-items: center;
@@ -87,6 +110,8 @@ header .home_link {
 
 header .home_link .logo {
     height: 1em;
+    aspect-ratio: 1;
+    background-image:var(--LOGO-URL);
 }
 
 
@@ -101,7 +126,7 @@ header .links {
 }
 
 header .links>a {
-    color: #fff;
+    color: var(--FG-COLOR);
 
     font-size: 0.8rem;
     font-weight: 900;
@@ -134,12 +159,12 @@ header .menu_btn {
     /* width: 20px; */
     /* height: 100%; */
     font-size: 1.5rem;
-    color: white;
+    color: var(--FG-COLOR);
 
 }
 
 .mobile_menu {
-    background-color: #272727;
+    background-color: var(--BG-COLOR);
     width: 100vw;
     height: 100vh;
 
@@ -150,7 +175,7 @@ header .menu_btn {
     overflow-y: scroll;
     transition: left 0.5s ease-out;
 
-    background-image: url('images/snowflake-gray.svg');
+    background-image: var(--BG-LOGO-URL);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -174,7 +199,7 @@ header .menu_btn {
 .mobile_menu .header .home_link {
     font-weight: 700;
     text-decoration: none;
-    color: #fff;
+    color: var(--FG-COLOR);
 
     display: flex;
     align-items: center;
@@ -183,17 +208,19 @@ header .menu_btn {
 
 .mobile_menu .header .home_link .logo {
     height: 2rem;
+    aspect-ratio: 1;
+    background-image: var(--LOGO-URL);
 }
 
 .mobile_menu .header .close_btn {
     font-size: 1.6rem;
     font-weight: 900;
-    color: #fff;
+    color: var(--FG-COLOR);
 }
 
 .mobile_menu .links>a {
     display: block;
-    color: #fff;
+    color: var(--FG-COLOR);
 
     margin-bottom: 2rem;
 
@@ -243,6 +270,7 @@ main {
     font-size: 1rem;
     padding: 1rem 2rem;
     border: 2px solid #fff;
+    color:#fff;
     width: fit-content;
 }
 
@@ -292,7 +320,7 @@ main {
 
 .work .card>.detail {
     padding: 2rem;
-    background-color: rgb(253, 234, 122);
+    background-color: var(--CARD-YELLOW);
     color: #000;
 
     display: flex;
@@ -301,7 +329,7 @@ main {
 }
 
 .work .card>.detail.blue {
-    background-color: rgb(122, 137, 253);
+    background-color: var(--CARD-BLUE);
 }
 
 .work .card>.detail .author_container {
@@ -357,6 +385,7 @@ main {
 }
 
 /*|| FOOTER */
+
 footer {
     font-size: 1rem;
     font-weight: 900;
@@ -419,7 +448,10 @@ footer .footer_socials {
 .footer-top .footer_socials .logo {
 
     width: 100%;
+    aspect-ratio: 1;
     margin-top: 3rem;
+    background-image: var(--LOGO-DARK-URL);
+    display: block;
 }
 
 .footer-bottom {
