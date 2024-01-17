@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+
+header {
+    background-color: #777;
+    color: #eee;
+    padding: 0.5em 0;
+}
+
+.header_top_bar {
+    padding: 0.5em 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header_top_bar .menu_btn {
+    border: none;
+    height: 20px;
+    aspect-ratio: 1;
+    /* margin:10px; */
+    background-color: transparent;
+    position: relative;
+}
+
+.menu_icon, .menu_icon::before, .menu_icon::after {
+    display: block;
+    width:100%;
+    height: 2px;
+    border-radius: 50px;
+    background-color: #eee;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.menu_icon::before, .menu_icon::after {
+    content: "";
+}
+
+.menu_icon::before {
+    position: absolute; 
+    top:0;
+    /* transform: translateY(-10px); */
+}
+
+.menu_icon::after {
+    position: absolute;
+    bottom:0;
+    /* transform: translateY(10px); */
+}
+:is(header:hover,header:focus-within) .menu_icon{
+    background-color: transparent;
+}
+:is(header:hover,header:focus-within) .menu_icon::before{
+    top:50%;
+    transform: rotate(45deg);
+}
+:is(header:hover,header:focus-within) .menu_icon::after{
+    top:50%;
+    transform: rotate(-45deg);
+}
+:is(header:hover,header:focus-within) nav{
+    display: block;
+}
+nav{
+    display:none;
+    transform-origin: top center;
+    animation: scrolldown 0.5s ease;
+    background-color: #777;
+}
+@keyframes scrolldown {
+    0%{
+          transform: scaleY(0);    
+    }
+    70%{
+          transform: scaleY(100%);      
+    }
+    100%{
+          transform: scaleY(101%);      
+    }
+}
+
+nav ul {
+    list-style: none;
+    margin-top: 1em;
+    /* list-style-position: inside; */
+}
+
+nav ul li {
+    border-top: 1px solid #fff;
+    text-align: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding:1rem 0;
+}
+
+
+
+.box {
+    border: 2px solid #000;
+    display: grid;
+    place-content: center;
+    padding: 1em;
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+}
+
+.box:first-child {
+    background-color: royalblue;
+    color: #fff;
+    /* transform: translateX(100%); */
+    /* transform: rotateX(180deg); */
+    /* transform: skewX(20deg); */
+    /* transform: */
+
+}
+
+.box:nth-child(2) {
+    background-color: rgb(140, 225, 65);
+    /* background-image: linear-gradient(to right, rgb(140, 225, 65) 50% , rgb(255, 255, 255)); */
+    color: #000;
+    /* transform: translateY(calc(-50% - 2rem)); */
+    /* transform: rotateY(180deg); */
+    /* transform: skewY(20deg); */
+
+}
+
+.box:last-child {
+    background-color: rgb(247, 255, 1);
+    color: #000;
+    /* transform: translate(-100%,calc(-150% - 1rem) ); */
+    /* transform: rotateZ(30deg); */
+    /* transform: skew(20deg,15deg); */
+}
+
+.box:hover {
+    /* transition-property:all;
+    transition-duration:0.5s;
+    transition-timing-function: ease-in-out; */
+    transition: all 0.5s ease-in-out;
+    background-color: rgb(123, 42, 221);
+    color: #fff;
+    transform: skew(20deg, 15deg);
+}
+
+
+.animate {
+    /* animation-name:roll;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;*/
+    animation: roll 2s ease 1;
+}
+
+@keyframes roll {
+    0% {
+        transform: translateX(0) rotate(0deg);
+    }
+
+    33% {
+        transform: translateX(200px) rotate(180deg);
+    }
+
+    66% {
+        transform: translateX(-200px) rotate(180deg);
+    }
+}
