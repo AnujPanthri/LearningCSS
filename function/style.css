@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --BG-COLOR:rgb(167, 247, 63);
+    --FONT-COLOR: white;
+    --CONTENT-COLOR:rgb(34, 34, 34);
+    --PADDING: 1rem 1rem;
+    
+    --FS-LARGE: clamp(3rem,10vh,4rem);
+    --FS-MEDIUM: clamp(1.7rem,5vh,2.5rem);
+    --FS-SMALL: clamp(1rem,2vh,1.3rem);
+
+    --MEDIUM-SHADOW: 0 2px 20px -10px #000;
+    --LIGHT-SHADOW: 0 2px 20px -15px #000;
+}
+
+::-webkit-scrollbar{
+    background-color:white;
+}
+::-webkit-scrollbar-thumb{
+    background-color:var(--BG-COLOR);
+    border-radius: 20px;
+    filter:grayscale(1);
+
+}
+
+body{
+    font-family:"Roboto",sans-serif;
+    font-size: 2rem;
+    display:flex;
+    flex-flow:column nowrap;
+    min-height:100vh;
+}
+
+/* || UTILITY CLASSES */
+
+.tooltip{
+    position: relative;
+    border-bottom:1px dashed orange;
+}
+.highlight:hover{
+    background-color: rgb(182, 182, 182) !important;
+
+}
+.tooltip:hover::before{
+    content: attr(data-tooltip);
+    white-space: nowrap;
+
+    position:absolute;
+    top:calc( 100% + 2px);
+    
+    padding:0.5em;
+    font-size:0.8em;
+
+    background-color: #000;
+    color:aliceblue;
+
+    border-radius: 10px;
+
+    box-shadow: var(--MEDIUM-SHADOW);
+}
+
+/* || GENERAL CSS */
+
+header,footer{
+    text-align:center;
+    background-color:var(--BG-COLOR);
+    color:var(--FONT-COLOR);
+    padding:var(--PADDING);
+}
+
+main{
+    flex-grow: 1;
+    padding:var(--PADDING);
+
+}
+
+main .title{
+    font-size: var(--FS-LARGE);
+}
+
+main .sub{
+    font-size: var(--FS-MEDIUM);
+}
+
+main .content{
+    font-size: var(--FS-SMALL);
+    color:var(--CONTENT-COLOR);
+}
+
+.cards{
+    width:100%;
+    display:grid;
+    grid-template-columns: repeat(3,minmax(50px,300px));
+    gap:min(20px,2vw);
+    margin-top:2rem;
+}
+
+.cards .card{
+    padding:1rem;
+    font-size:1em;
+    background-color: rgb(183, 255, 115);
+    border-radius: 10px;
+    box-shadow: var(--LIGHT-SHADOW);
+    /* box-shadow: 0 0; */
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media screen and (min-width:550px) {
+    .cards{
+        grid-template-columns: repeat(4,minmax(100px,300px));
+    }
+    .cards .card{
+        padding:2rem;
+    }
+}
