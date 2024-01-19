@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+    <link rel="stylesheet" href="style.css">
+    <style id="custom_style"></style>
+</head>
+
+<body>
+    <h1>Carousel</h1>
+    <section class="carousel">
+        <div class="slides">
+            <div class="slide active">
+                <img class="bg" src="images/magnus.webp" alt="magnus">
+                <div class="content">
+                    <span class="title">Magnus Carlsun</span>
+                </div>
+            </div>
+            <div class="slide">
+                <img class="bg" src="images/viswanathan.jpg" alt="viswanathan">
+                <div class="content">
+                    <span class="title">Viswanathan Anand</span>
+                </div>
+            </div>
+            <div class="slide">
+                <img class="bg" src="images/hikaru.png" alt="hikaru">
+                <div class="content">
+                    <span class="title">Hikaru Nakamura</span>
+                </div>
+            </div>
+        </div>
+        <button class="prev" onclick="slide_prev();">prev</button>
+        <button class="next" onclick="slide_next();">next</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
