@@ -41,4 +41,11 @@ function slide_prev(){
     slide_to(new_slide_idx+1);
 }
 
-// slide_to(3);
+
+// auto slideshow
+curr_idx=0;
+setInterval(function(){
+    curr_idx+=1;
+    curr_idx%=all_slide.length;
+    slide_to(curr_idx+1);
+},1000*10);
