@@ -79,8 +79,13 @@ body {
 .slides {
     height: 100%;
     display: flex;
-    overflow: hidden;
+    overflow-x: scroll;
     scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.slides::-webkit-scrollbar{
+    display: none;
 }
 
 
@@ -91,6 +96,7 @@ body {
 
     font-size: 2em;
     position: relative;
+    scroll-snap-align: center;
     /* pointer-events:none; */
     /* pointer-events: none; */
 }
@@ -107,22 +113,12 @@ body {
 
 }
 
-.slide::after {
-    content: "";
-    position: absolute;
-    display: block;
-    height: 100%;
-    width: 100%;
-    background-image: linear-gradient(to top, #000000cc, transparent);
-    z-index: 0;
-
-}
-
 .slide>.content {
     z-index: 1;
     width: 100%;
     height: 100%;
     position: absolute;
+    background-image: linear-gradient(to top, #000000cc, transparent);
     top: 0;
     left: 0;
     display: grid;
