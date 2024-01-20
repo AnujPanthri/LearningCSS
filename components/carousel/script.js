@@ -1,5 +1,5 @@
-slides = document.querySelector(".carousel .slides");
-all_slide = slides.querySelectorAll('.slide');
+slides = document.querySelector(".carousel .slides");   // container having slides
+all_slide = slides.querySelectorAll('.slide');  // array of every slide
 
 // slides.scrollWidth is the total scroll width
 // slides.scrollLeft width of the left part which is not visible after scrolling
@@ -7,9 +7,8 @@ all_slide = slides.querySelectorAll('.slide');
 
 
 function slide_to(position){
-
+    // position means 1 for first slide ,2 for second slide
     var index = position-1;
-    all_slide = slides.querySelectorAll(".slide");
     all_slide.forEach(slide=>{
         slide.classList.remove('active');
     })
